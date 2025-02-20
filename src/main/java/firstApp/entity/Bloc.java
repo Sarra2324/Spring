@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -19,5 +21,10 @@ public class Bloc implements Serializable {
     private int idBloc;
     private String nomBloc;
     private int capaciteBloc;
+    @ManyToOne(cascade = CascadeType.ALL)
+   Foyer foyer;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
+    private Set<Chambre> chambres;
 }
+
 
