@@ -17,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class Etudiant implements Serializable {
    @Id
-    private int idEtudiant;
+    private Long idEtudiant;
    private String nomEt;
    private String prenomEt;
    private int CIN;

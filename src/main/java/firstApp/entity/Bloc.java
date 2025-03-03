@@ -18,7 +18,7 @@ import java.util.Set;
 public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idBloc;
+    private Long idBloc;
     private String nomBloc;
     private int capaciteBloc;
     @ManyToOne(cascade = CascadeType.ALL)
