@@ -1,7 +1,7 @@
 package firstApp.service;
 
 import firstApp.entity.Bloc;
-import firstApp.repository.IBlocRepositor;
+import firstApp.repository.IBlocRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class BlocService implements IBlocService{
     @Autowired
-    IBlocRepositor iBlocRepositor;
+    IBlocRepository iBlocRepository;
     @Override
     public List<Bloc> retrieveBlocs() {
         return List.of();
@@ -18,22 +18,22 @@ public class BlocService implements IBlocService{
 
     @Override
     public Bloc updateBloc(Bloc bloc) {
-        return iBlocRepositor.save(bloc);
+        return iBlocRepository.save(bloc);
     }
 
     @Override
     public Bloc addBloc(Bloc bloc) {
-        return iBlocRepositor.save(bloc);
+        return iBlocRepository.save(bloc);
     }
 
     @Override
     public Bloc retrieveBloc(long idBloc) {
-        return iBlocRepositor.findById((int) idBloc).get();
+        return iBlocRepository.findById((int) idBloc).get();
     }
 
     @Override
     public void removeBloc(long idBloc) {
-         iBlocRepositor.deleteById((int) idBloc) ;
+         iBlocRepository.deleteById((int) idBloc) ;
 
     }
 }

@@ -38,4 +38,5 @@ public class BlocController {
     public void removeBloc(@PathVariable("id") long idBloc) {
         blocService.removeBloc(idBloc);
     }
+
 }

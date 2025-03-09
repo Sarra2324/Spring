@@ -1,7 +1,9 @@
 package firstApp.service;
 
 import firstApp.entity.Foyer;
+import firstApp.entity.Universite;
 import firstApp.repository.IFoyerRepository;
+import firstApp.repository.IUniversiteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import java.util.List;
 public class FoyerService implements IFoyerService {
     @Autowired
     IFoyerRepository foyerRepository;
+
     @Override
     public List<Foyer> retrieveAllFoyers() {
         return List.of();
@@ -35,4 +38,5 @@ public class FoyerService implements IFoyerService {
         foyerRepository.deleteById((int) idFoyer);
     }
 
-}
+    }
+

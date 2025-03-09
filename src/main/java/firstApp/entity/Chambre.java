@@ -17,8 +17,9 @@ import java.util.Set;
 public class Chambre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChambre;
+    private long idChambre;
     private int numeroChambre;
+    @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
     @ManyToOne
     Bloc bloc;
