@@ -1,8 +1,11 @@
 package firstApp.service;
 
+import firstApp.entity.Bloc;
 import firstApp.entity.Chambre;
 import firstApp.entity.TypeChambre;
+import firstApp.repository.IBlocRepository;
 import firstApp.repository.IChambreRepository;
+import firstApp.repository.IFoyerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ public class ChambreService implements IChambreService {
 
     @Autowired
     private IChambreRepository chambreRepository;
+    @Autowired
+    private IFoyerRepository foyerRepository;
 
     @Override
     public List<Chambre> retrieveAllChambres() {
@@ -43,4 +48,9 @@ public class ChambreService implements IChambreService {
     public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
         return chambreRepository.findByBlocIdBlocAndTypeC(idBloc, typeC);
     }
+
+    @Override
+    public void affecterChambresABloc(Bloc bloc) {
+        }
+
 }

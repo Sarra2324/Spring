@@ -34,5 +34,8 @@ public class ReservationController {
     public List<Reservation> getReservationsParAnneeUniversitaire(@PathVariable Date anneeUniversitaire, @PathVariable String nomUniversite) {
         return reservationService.getReservationParAnneeUniversitaireEtNomUniversite(anneeUniversitaire, nomUniversite);
     }
-
+    @PostMapping("/ajouter/{idChambre}/{cinEtudiant}")
+    public Reservation ajouterReservation(@PathVariable long idChambre, @PathVariable long cinEtudiant) {
+        return reservationService.ajouterReservation(idChambre, cinEtudiant);
+    }
 }

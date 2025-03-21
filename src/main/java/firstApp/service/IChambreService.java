@@ -1,5 +1,6 @@
 package firstApp.service;
 
+import firstApp.entity.Bloc;
 import firstApp.entity.Chambre;
 import firstApp.entity.TypeChambre;
 
@@ -14,4 +15,7 @@ public interface IChambreService {
     List<Chambre> getChambresNonReserveParNomUniversiteEtTypeChambre(String nomUniversite, TypeChambre type);
 
     List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC);
+    void affecterChambresABloc(Bloc bloc);
+
 }
+

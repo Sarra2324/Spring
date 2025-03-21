@@ -20,4 +20,6 @@ public interface IChambreRepository extends JpaRepository<Chambre, Long> {
     List<Chambre> findChambresParBlocEtTypeJPQL(long idBloc, TypeChambre typeC);
 
     List<Chambre> findByBlocIdBlocAndTypeC(long idBloc, TypeChambre typeC);
+    List<Chambre> findByIdChambreIn(List<Long> ids);
+    List<Chambre> findByNumeroChambreIn(List<Long> numChambres);
 }

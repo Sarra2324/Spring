@@ -1,5 +1,6 @@
 package firstApp.controller;
 
+import firstApp.entity.Foyer;
 import firstApp.entity.Universite;
 import firstApp.service.UniversiteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,17 @@ public class UniversiteController {
     @PutMapping("/affecter-foyer/{idFoyer}/{nomUniversite}")
     public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
         return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+
+
+    @PutMapping("/desaffecter-foyer/{idUniversite}")
+    public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
+        return universiteService.desaffecterFoyerAUniversite(idUniversite);
+    }
+
+    @PostMapping("/ajouter-foyer/{idUniversite}")
+    public Universite ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer, @PathVariable long idUniversite) {
+        return universiteService.ajouterFoyerEtAffecterAUniversite(foyer, idUniversite);
     }
 }
